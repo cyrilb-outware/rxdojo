@@ -15,11 +15,22 @@
 
 default_platform(:ios)
 
-platform :ios do
-  desc "Release beta of app"
-  lane :beta do
-    build_app(scheme: "RxDojo",
-              include_bitcode: true)
-    hockey(api_token: "9ca0fe4f511d45dbb51b4b8bcf37aabd")
-  end
+desc "Release beta of app"
+lane :beta do
+  get_certificates(
+    team_id: "B3954BPX4P"
+  )
+  get_provisioning_profile(
+    team_id: "B3954BPX4P",
+    app_identifier: "outware.RxDojo",
+    adhoc: true
+  )
+  # increment_build_number
+  build_app(
+    scheme: "RxDojo",
+    include_bitcode: true
+  )
+  # hockey(
+  #   api_token: "9ca0fe4f511d45dbb51b4b8bcf37aabd"
+  # )
 end
