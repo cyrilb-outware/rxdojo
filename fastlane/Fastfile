@@ -25,12 +25,12 @@ lane :beta do
     app_identifier: "outware.RxDojo",
     adhoc: true
   )
-  # increment_build_number
+  increment_build_number
   build_app(
     scheme: "RxDojo",
     include_bitcode: true
   )
-  # hockey(
-  #   api_token: "9ca0fe4f511d45dbb51b4b8bcf37aabd"
-  # )
+  hockey(
+    api_token: "9ca0fe4f511d45dbb51b4b8bcf37aabd"
+  )
 end
