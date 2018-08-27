@@ -8,7 +8,6 @@
 
 import XCTest
 import RxDojo
-import RxTest
 
 class RxDojoTests: XCTestCase {
     
